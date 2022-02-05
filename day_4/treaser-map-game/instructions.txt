@@ -1,0 +1,19 @@
+Your job is to write a program that allows you to 
+mark a square on the map using a two-digit system. 
+The first digit is the vertical column number and 
+the second digit is the horizontal row number. e.g.:
+First your program must take the user input and convert it to a usable format.
+
+Next, you need to use it to update your nested list with an "x".
+
+Example Input 1
+column 2, row 3 would be entered as:
+23
+
+Example Output 1
+['⬜️', '⬜️', '⬜️']
+​
+['⬜️', '⬜️', '⬜️']
+​
+['⬜️', 'X', '⬜️']
+
