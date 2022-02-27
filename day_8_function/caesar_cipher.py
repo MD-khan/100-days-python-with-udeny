@@ -10,20 +10,18 @@ shift = int(input("Type the shift number:\n"))
 
 
 def encrypt(text, shift):
-    text = text.replace(' ', '')
     cipher_text = ''
-    for t in text:
-        #index_position = alphabet.index(t) + shift
-        cipher_text += alphabet[alphabet.index(t) + shift]
+    for letter in text:
+        #index_position = alphabet.index(letter) + shift
+        cipher_text += alphabet[alphabet.index(letter) + shift]
     print(cipher_text)
 
 
 def decrypt(text, shift):
-    text = text.replace(' ', '')
     cipher_text = ''
-    for t in text:
+    for letter in text:
         #index_position = alphabet.index(t) + shift
-        cipher_text += alphabet[alphabet.index(t) - shift]
+        cipher_text += alphabet[alphabet.index(letter) - shift]
     print(cipher_text)
 
 
