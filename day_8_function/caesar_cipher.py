@@ -1,53 +1,34 @@
 #!/usr/bin/env python3
 # Python 3.9.6
 
+
+from posixpath import split
+import re
+
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+            'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
             'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-#direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-#text = input("Type your message:\n").lower()
-#shift = int(input("Type the shift number:\n"))
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
 
 
-def encrypt(text, shift):
-    cipher_text = ''
+def caesar(text, shift_amount, cipher_direction):
+    resutl = ""
+    if cipher_direction == "decode":
+        shift_amount *= -1
     for letter in text:
-        #index_position = alphabet.index(letter) + shift
-        # print(index_position)
-        index_position = 0
-        if index_position > len(alphabet):
-            index_position = alphabet.index(letter) + shift
-        elif index_position < len(alphabet):
-            index_position = alphabet.index(letter) - shift
-        cipher_text += alphabet[index_position]
-    print(cipher_text)
+        if letter in alphabet:
+            position = alphabet.index(letter)
+            new_position = position + shift_amount
+            resutl += alphabet[new_position]
+        else:
+            resutl += letter
+
+    print(f"The {cipher_direction}d text is {resutl}")
 
 
-encrypt('zulu', 5)
-
-
-# def decrypt(text, shift):
-#     cipher_text = ''
-#     for letter in text:
-#         index_position = alphabet.index(letter) - shift
-#         cipher_text += alphabet[index_position]
-#     print(cipher_text)
-def decrypt(text, shift):
-    cipher_text = ''
-    for letter in text:
-        #index_position = alphabet.index(letter) + shift
-        # print(index_position)
-        index_position = 0
-        if index_position > len(alphabet):
-            index_position = alphabet.index(letter) - shift
-        elif index_position < len(alphabet):
-            index_position = alphabet.index(letter) + shift
-        cipher_text += alphabet[index_position]
-    print(cipher_text)
-
-
-decrypt('upgp', 5)
-# if direction == 'encode':
-#     encrypt(text, shift)
-# else:
-#     decrypt(text, shift)
+caesar(text, shift, direction)
