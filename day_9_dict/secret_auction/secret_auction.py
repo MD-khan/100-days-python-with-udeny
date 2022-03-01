@@ -1,41 +1,48 @@
 #!/usr/bin/env python3
 # Python 3.9.6
-from cmath import inf
+
 from art import logo
 
-# print(logo)
 
-info = []
+print(logo)
+
+
+def find_winner(biding_record):
+    max_bid = 0
+    winner = ""
+    for bidder in biding_record:  # bidder get the key
+        bid_amount = biding_record[bidder]  # geting the value
+        if bid_amount > max_bid:
+            max_bid = bid_amount
+            winner = bidder
+    print(f"The winner is {winner} with a bid of ${max_bid}")
+
+
+biding_record = {'monir': 120, 'juma': 340}
+# find_winner(biding_record)
 
 
 def secretAuction():
-    name = input("What's your name: ")
-    bid = int(input("What's your bid?: "))
-    global info
-    info = [{"name": name, "bid": bid}]
-    end_info = False
-    while end_info is not True:
+    bids = {}
+    end_bid = False
+    while end_bid is not True:
+        name = input("What's your name: ")
+        price = int(input("What's your bid?: "))
+        bids[name] = price
         yes_no = input("Are their any bidders? \n Type y or n: ")
-        if yes_no == "y":
-            more_info = {}
-            name = input("What's your name: ")
-            bid = input("What's your bid?: ")
-            more_info["name"] = name
-            more_info["bid"] = bid
-            info.append(more_info)
-        else:
-            end_info = True
-            print(info)
+        if yes_no == "n":
+            find_winner(bids)
+            end_bid = True
 
 
 secretAuction()
-# test = [
-#     {'name': 'monir', 'bid': 120},
-#     {'name': 'juma', 'bid': 30},
-#     {'name': 'musa', 'bid': 400},
-#     {'name': 'Munisa', 'bid': 300},
+bidders = [
+    {'name': 'Alex', 'bid': 120},
+    {'name': 'Bob', 'bid': 30},
+    {'name': 'Wilson', 'bid': 400},
+    {'name': 'Smith', 'bid': 300},
 
-# ]
+]
 # for bid in test:
 #     max_bid = 0
 #     print(bid.items())
