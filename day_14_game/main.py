@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-from math import gamma
-from pydoc import describe
 import random
 import os
 
