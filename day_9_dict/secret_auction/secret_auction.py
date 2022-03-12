@@ -35,7 +35,7 @@ def secretAuction():
             end_bid = True
 
 
-secretAuction()
+# secretAuction()
 bidders = [
     {'name': 'Alex', 'bid': 120},
     {'name': 'Bob', 'bid': 30},
@@ -43,6 +43,9 @@ bidders = [
     {'name': 'Smith', 'bid': 300},
 
 ]
+l = list(filter(lambda item: item['name'] == 'Alex', bidders))
+print([x for x in bidders if x['name'] == 'Wilson'][0])
+# print(l)
 # for bid in test:
 #     max_bid = 0
 #     print(bid.items())
