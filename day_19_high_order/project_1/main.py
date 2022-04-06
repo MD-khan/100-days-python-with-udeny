@@ -1,4 +1,4 @@
-from operator import ne
+
 from turtle import Turtle, Screen
 
 
