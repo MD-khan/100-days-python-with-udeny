@@ -12,17 +12,12 @@ screen.tracer(0)
 
 snake = Snake()
 
-# starting_position = [(0, 0), (-20, 0), (-40, 0)]
 
-# segments = []
-
-# for position in starting_position:
-#     new_segment = Turtle("square")
-#     new_segment.color("white")
-#     new_segment.penup()
-#     new_segment.goto(position)
-#     segments.append(new_segment)
-
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
 game_on = True
 while game_on:
     screen.update()
