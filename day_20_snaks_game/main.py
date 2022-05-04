@@ -1,4 +1,5 @@
 
+from snake import Snake
 from turtle import Turtle, Screen
 import time
 
@@ -9,50 +10,24 @@ screen.bgcolor('black')
 screen.title("MD's Snack Game")
 screen.tracer(0)
 
+snake = Snake()
 
-starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+# starting_position = [(0, 0), (-20, 0), (-40, 0)]
 
-new_snacks = []
+# segments = []
 
-for position in starting_positions:
-    snack = Turtle('square')
-    snack.color('white')
-    snack.penup()
-    snack.goto(position)
-    new_snacks.append(snack)
+# for position in starting_position:
+#     new_segment = Turtle("square")
+#     new_segment.color("white")
+#     new_segment.penup()
+#     new_segment.goto(position)
+#     segments.append(new_segment)
 
-# move snaks
-is_game_on = True
-while is_game_on:
+game_on = True
+while game_on:
     screen.update()
     time.sleep(0.1)
-    for snack_parts_num in new_snacks:
-        
-
-
-def move_forward():
-    snack.forward(10)
-
-
-def move_backward():
-    snack.backward(10)
-
-
-def turn_up():
-    new_heading = snack.heading() + 90
-    snack.setheading(new_heading)
-
-
-def turn_down():
-    new_heading = snack.heading() - 90
-    snack.setheading(new_heading)
-
-
-screen.listen()
-screen.onkey(key="w", fun=move_forward)
-screen.onkey(key="s", fun=move_backward)
-screen.onkey(key="a", fun=turn_up)
-screen.onkey(key="d", fun=turn_down)
+    snake.move()
 
 
 screen.exitonclick()
