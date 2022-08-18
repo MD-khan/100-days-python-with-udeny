@@ -1,0 +1,21 @@
+Breakdown the problem
+
+Components:
+1. Game Field or the platform
+2. Player
+3. Score
+
+1 . Game Field
+    - Assing the filed area. Area supposed to be square
+    - Create a bar middle of the field
+
+2. Player
+    - Allow user to create Player
+    - An user may play with computer 
+    - Or He can play with another Player
+
+3. Score
+    - Keep updating the score while game is on
+    - Keep separate each player's score
+    - Assing the wining score
+    - Decide when to end the game
